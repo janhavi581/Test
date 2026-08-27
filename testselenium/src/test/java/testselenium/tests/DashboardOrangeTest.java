@@ -72,6 +72,8 @@ public class DashboardOrangeTest extends LoginOrangeBaseTest
 		op.clickSearch();
 		op.getResult(expectedName);
 		
+		System.out.println("Jenkins CI Test - Dashboard test completed successfully");
+		
 		
 		
 		
