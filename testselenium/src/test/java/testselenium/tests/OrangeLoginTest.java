@@ -31,6 +31,7 @@ public class OrangeLoginTest extends LoginOrangeBaseTest
 		String expectedText = "Invalid credentials";
 		
 		String actualText = lop.getInvalidMessage();
+		System.out.println(actualText);
 		
 		Assert.assertEquals(actualText,expectedText);
 		System.out.println(actualText);
