@@ -69,10 +69,29 @@ public class ShoppingPage
 	
 	public void selectProduct()
 	{
-	
-	    
-		wait.until(ExpectedConditions.elementToBeClickable(viewProd)).click();
-		wait.until(ExpectedConditions.elementToBeClickable(addtoCa)).click();
+	    WebElement product = wait.until(
+	            ExpectedConditions.visibilityOf(viewProd)
+	    );
+
+	    ((JavascriptExecutor) driver).executeScript(
+	            "arguments[0].scrollIntoView({block:'center'});",
+	            product
+	    );
+
+	    try
+	    {
+	        wait.until(ExpectedConditions.elementToBeClickable(product));
+	        product.click();
+	    }
+	    catch (Exception e)
+	    {
+	        ((JavascriptExecutor) driver).executeScript(
+	                "arguments[0].click();",
+	                product
+	        );
+	    }
+
+	    wait.until(ExpectedConditions.elementToBeClickable(addtoCa)).click();
 	}
 	
 	public void viewCart()
