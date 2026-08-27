@@ -1,6 +1,6 @@
 package testselenium.tests;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -19,7 +19,8 @@ public class DashboardOrangeTest extends LoginOrangeBaseTest
 	@DataProvider(name="employeeData")
 	public Object[][] employeeData()
 	{
-		return new Object[][]{
+		return new Object[][]
+				{
 			{"Amit","Anil","Sank","89"},
 			{"Rajesh","Ram","Patil","99"},
 			{"Sham","Dilip","Sinhi","79"},

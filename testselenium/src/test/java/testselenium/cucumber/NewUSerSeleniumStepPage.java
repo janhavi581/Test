@@ -63,7 +63,7 @@ public class NewUSerSeleniumStepPage {
 
         System.out.println("The Actual URL is : " + ac);
 
-        String ex = "https://www.tutorialspoint.com/selenium/practice/register.php";
+        String ex = "https://www.tutorialspoint.com/selenium/practice/register.php#";
 
         Assert.assertEquals(ac, ex);
 
