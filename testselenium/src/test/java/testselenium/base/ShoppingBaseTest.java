@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 
 import testselenium.listeners.AdvertisementListener;
+import testselenium.utils.ConfigReader;
 
 import org.testng.annotations.AfterMethod;
 
@@ -27,7 +28,7 @@ public class ShoppingBaseTest
 
         driver.manage().window().maximize();
 
-        driver.get("https://automationexercise.com/");
+        driver.get(ConfigReader.getProperty("shoppingurl"));
 		
 	}
 	@AfterMethod
