@@ -1,25 +1,41 @@
 pipeline {
+
     agent any
 
     stages {
 
         stage('Run Tests') {
+
             steps {
-                bat 'mvn -f testselenium/pom.xml clean test -Dtest=TestRunner -Dcucumber.filter.tags=@registration'
+
+                bat 'mvn -f testselenium/pom.xml clean package -Dtest=TestRunner -Dcucumber.filter.tags=@registration'
+
             }
+
         }
 
         stage('Deploy') {
+
             steps {
+
                 echo 'Deployment started'
+
                 echo 'Application deployed successfully'
+
             }
+
         }
+
     }
 
     post {
+
         always {
+
             echo 'Test execution completed'
+
         }
+
     }
+
 }
