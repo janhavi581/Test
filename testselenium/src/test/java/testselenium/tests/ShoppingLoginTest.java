@@ -20,7 +20,7 @@ public class ShoppingLoginTest extends ShoppingBaseTest
 		sp.enterEmail(emaill);
 		sp.enterPass(password);
 		sp.clickLoginBt();
-		
+		sp.verifyLogin();
 	}
 	@Test (priority=2)
 	public void invalidLogin()

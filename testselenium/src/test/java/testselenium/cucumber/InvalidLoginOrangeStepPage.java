@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import testselenium.base.LoginOrangeBaseTest;
+import testselenium.hooks.Hooks;
 import testselenium.pages.LoginOrangePage;
 
 public class InvalidLoginOrangeStepPage 
@@ -15,6 +16,7 @@ public class InvalidLoginOrangeStepPage
 	@Given("user is on login page")
 	public void user_is_on_login_page()
 	{
+		Hooks.driver.get("https://opensource-demo.orangehrmlive.com/");
 		lo=new LoginOrangeBaseTest();
 		lo.setUp();
 		lp=new LoginOrangePage(lo.driver);

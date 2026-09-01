@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import testselenium.base.BaseTest;
 import testselenium.base.LoginOrangeBaseTest;
+import testselenium.hooks.Hooks;
 import testselenium.pages.LoginOrangePage;
 
 public class LoginOrangeStepPage
@@ -18,6 +19,7 @@ public class LoginOrangeStepPage
 	@Given("User is on Orange Login Page")
 	public void user_is_on_login_page()
 	{
+		Hooks.driver.get("https://opensource-demo.orangehrmlive.com/");
 		bs.setUp();
 			lo=new LoginOrangePage(bs.driver);
 	}

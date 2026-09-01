@@ -9,13 +9,13 @@ import io.cucumber.java.Before;
 
 public class Hooks
 {
-	public WebDriver driver;
+	public static WebDriver driver;
 	@Before
 	public void setUp()
 	{
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+		
 	}
 	
 	

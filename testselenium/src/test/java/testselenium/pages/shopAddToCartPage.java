@@ -18,6 +18,9 @@ public class shopAddToCartPage
 	@FindBy(xpath="//a[@href=\"/view_cart\"]")
 	WebElement cartLink;
 	
+	@FindBy(xpath=" //u[normalize-space()='here']")
+	WebElement click;
+	
 	public shopAddToCartPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -35,6 +38,10 @@ public class shopAddToCartPage
 		System.out.println("The Actual Cart Page URL " +ac);
 		System.out.println("The Expected Cart Page URL " +ac);
 		Assert.assertEquals(ac,ex);
+	}
+	public void navigateToProductPage()
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(click)).click();
 	}
 	
 

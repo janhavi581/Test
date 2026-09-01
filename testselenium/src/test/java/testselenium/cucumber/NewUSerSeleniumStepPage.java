@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import testselenium.base.NewUserBaseTest;
+import testselenium.hooks.Hooks;
 import testselenium.pages.NewUserLoginPage;
 
 public class NewUSerSeleniumStepPage {
@@ -15,6 +16,9 @@ public class NewUSerSeleniumStepPage {
 
     @Given("user is on selenium login page")
     public void user_is_on_selenium_login_page() {
+    	 Hooks.driver.get(
+    		        "https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php"
+    		    );
 
         bs.setUp();
         nbp = new NewUserLoginPage(bs.driver);
