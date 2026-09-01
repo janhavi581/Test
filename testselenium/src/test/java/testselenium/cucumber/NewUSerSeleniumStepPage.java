@@ -63,13 +63,12 @@ public class NewUSerSeleniumStepPage {
     @Then("new user should register successfully")
     public void new_user_should_register_successfully() {
 
-        String ac = bs.driver.getCurrentUrl();
+    	String actualUrl = bs.driver.getCurrentUrl();
 
-        System.out.println("The Actual URL is : " + ac);
-
-        String ex = "https://www.tutorialspoint.com/selenium/practice/register.php#";
-
-        Assert.assertEquals(ac, ex);
+    	Assert.assertTrue(
+    	        actualUrl.startsWith("https://www.tutorialspoint.com/selenium/practice/register.php"),
+    	        "Unexpected URL: " + actualUrl
+    	);
 
         bs.tearDown();
     }

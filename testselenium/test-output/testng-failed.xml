@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testselenium.tests.ShoppingProductTest">
+      <class name="testselenium.cucumber.runner.TestRunner">
         <methods>
-          <include name="checkBrandProducts"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2 3 4"/>
         </methods>
-      </class> <!-- testselenium.tests.ShoppingProductTest -->
+      </class> <!-- testselenium.cucumber.runner.TestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

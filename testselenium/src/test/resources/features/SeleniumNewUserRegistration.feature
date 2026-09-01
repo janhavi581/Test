@@ -1,4 +1,5 @@
 Feature: Add New User 
+@registration
 Scenario: New User successful registration
 
 		Given user is on selenium login page
