@@ -1,0 +1,29 @@
+```groovy
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'master',
+                    credentialsId: 'github-token',
+                    url: 'https://github.com/janhavi581/Test.git'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'mvn -f testselenium/pom.xml clean test -Dtest=TestRunner -Dcucumber.filter.tags=@registration'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Test execution completed'
+        }
+    }
+}
+```
